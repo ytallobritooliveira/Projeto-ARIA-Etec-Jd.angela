@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ariastyle.css">
+    <title>O que é Aria?</title>
+</head>
+
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+    <header>
+        <div class="voltar">
+            <a href="../index.html" class="voltarbtn">Voltar</a></li>
+        </div>
+    </header>
+    <main id="conteudo-principal" class="ariapage2" aria-label="Atributos ARIA e erros comuns de desenvolvimento">
+        <h1 class="sr-only">Página 2 - Atributos e Erros</h1>
+        <nav class="cont">
+            <section aria-labelledby="s2-atributos">
+                <h2 id="s2-atributos">Quais são os principais atributos ARIA e como aplicá-los corretamente?</h2>
+                <ul>
+                    <li>role: Define a função de um elemento (ex: role="button", role="navigation", role="dialog").</li>
+                    <li>aria-label: Define uma string de texto para rotular um elemento, sendo crucial quando o conteúdo
+                        visual é
+                        insuficiente, como em botões de ícone.</li>
+                    <li>aria-labelledby: Associa um elemento a outro que o rotula, usando o ID do elemento de rótulo.</li>
+                    <li>aria-hidden: Oculta elementos de tecnologias assistivas (como leitores de tela), mesmo que visíveis
+                        no
+                        navegador (ex: aria-hidden="true").</li>
+                    <li>aria-expanded: Indica se um elemento agrupador (como um menu ou acordeão) está expandido ou
+                        recolhido
+                        (true/false).</li>
+                    <li>aria-live: Indica que um elemento será atualizado dinamicamente e os leitores de tela devem alertar
+                        o
+                        usuário (valores: polite, assertive, off).</li>
+                    <li>aria-selected: Indica o estado de seleção de elementos, como em abas ou listas (true/false).</li>
+                    <li>aria-checked: Indica o estado de caixas de seleção, botões de rádio ou itens de menu.</li>
+                    <li>aria-controls: Associa um elemento ao ID do componente que ele controla ou altera.</li>
+                </ul>
+            </section>
+            <section aria-labelledby="s2-erros">
+                <h2 id="s2-erros">Quais erros comuns os desenvolvedores cometem ao usar ARIA?</h2>
+                <p>Os erros comuns no uso de ARIA (Accessible Rich Internet Applications) geralmente decorrem de tentativas
+                    de
+                    adicionar acessibilidade a componentes complexos sem usar as práticas recomendadas de HTML.
+                    Aqui estão os principais erros, com base em diretrizes de desenvolvimento web:</p>
+                <ol>
+                    <li><h2>Violação da "Primeira Regra do ARIA"</h2></li>
+                    <p>O erro mais frequente é usar ARIA quando existe um elemento HTML nativo que já resolve o problema.
+                    </p>
+                    <ul>
+                        <li>O erro: Criar um botão usando div ou span com role="button" e tabindex="0".</li>
+                        <li>A correção: Use a tag button. Elementos nativos já possuem suporte a teclado (Enter/Espaço) e
+                            foco automático.</li>
+                    </ul>
+                        <li><h2>Uso de aria-hidden="true" em elementos focáveis</h2></li>
+                    <p>Muitos desenvolvedores ocultam elementos visualmente, mas esquecem de tirá-los da ordem de tabulação.</p>
+                    <ul>
+                        <li>O erro: Usar aria-hidden="true" em um elemento que ainda pode receber foco por teclado, o que confunde usuários de leitores de tela.</li>
+                        <li>A correção: Se o elemento não deve ser lido, ele não deve ser focável. Use tabindex="-1" ou remova o elemento do DOM.</li>
+                    </ul>
+                        <li><h2>Falta de suporte a teclado (Keyboard Support)</h2></li>
+                    <p>Atribuir um papel (role) ARIA não adiciona comportamento funcional.</p>
+                    <ul>
+                        <li>O erro: Adicionar role="button" a um elemento div e não permitir que ele seja ativado pela tecla Enter ou Barra de Espaço.</li>
+                        <li>A correção: Ao usar ARIA, você é responsável por gerenciar todo o comportamento via JavaScript.</li>
+                    </ul>
+                        <li><h2>Rótulos genéricos ou ausentes (aria-label)</h2></li>
+                    <p>Usar aria-label de forma vaga, como "clique aqui", "botão", ou "link", não dá contexto ao usuário.</p>
+                    <ul>
+                        <li>O erro: Botões de ícones sem texto descritivo.</li>
+                        <li>A correção: O aria-label deve ser descritivo: aria-label="Fechar janela" ou aria-label="Enviar formulário".</li>
+                    </ul>
+                        <li><h2>Uso indevido de aria-live</h2></li>
+                    <p>O aria-live avisa o usuário sobre mudanças na tela, mas seu uso excessivo é intrusivo.</p>
+                    <ul>
+                        <li>O erro: Usar aria-live="assertive" (que interrompe o leitor de tela) para mensagens não críticas, como atualizações de conteúdo secundário.</li>
+                        <li>A correção: Use aria-live="polite" para notificações gerais e aria-live="assertive" apenas para mensagens de erro urgentes.</li>
+                    </ul>
+                        <li><h2>Relações quebradas com aria-labelledby</h2></li>
+                    <p>aria-labelledby aponta para outro elemento para dar um nome ao componente.</p>
+                    <ul>
+                        <li>O erro: O id referenciado no aria-labelledby não existe no DOM, ou o elemento referenciado está escondido.</li>
+                    </ul>
+                        <li><h2>Uso de tabindex maior que zero</h2></li>
+                    <ul>
+                        <li>O erro: Usar tabindex="1", tabindex="2", etc. Isso quebra a ordem de tabulação natural da página.</li>
+                        <li>A correção: Use apenas tabindex="0" (para colocar na ordem) ou tabindex="-1" (para remover da ordem).</li>
+                    </ul>
+                </ol>
+            </section>
+            <section aria-labelledby="s2-exemplos">
+                <h2 id="s2-exemplos">Exemplos práticos</h2>
+                <p style="text-align: center;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam quidem delectus, ab necessitatibus deleniti harum doloribus rerum vitae! Sit ullam nihil eveniet iste delectus. Nesciunt maiores ratione fugit illum error!</p>
+            </section>
+            <section aria-labelledby="s2-integracao">
+                <h2 id="s2-integracao">Como ARIA se integra com HTML5 e CSS?</h2>
+                <p>O WAI-ARIA (Accessible Rich Internet Applications) integra-se ao HTML5 e CSS agindo como uma camada semântica extra, focada em tornar aplicações web complexas acessíveis a pessoas com deficiências, especialmente usuários de leitores de tela. Ele não altera o visual (CSS) ou a funcionalidade (JavaScript), mas comunica funções, estados e propriedades aos navegadores e tecnologias assistivas.</p>
+            </section>
+        </nav>
+    </main>
+    <footer>
+        <p>ETEC JD - ÂNGELA 2026</p>
+        <p>Raphael Pinheiro Duca Silva</p>
+        <p>Ytallo Brito de Oliveira</p>
+        <p>Nycollas Pereira Martins</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal.css">
+    <title>Trabalho ARIA</title>
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+    <header>
+        <h1>O que é ARIA e Acessibilidade na WEB</h1>
+        <p aria-label="Página Atual: Página Principal">Página Principal</p>
+    </header>
+    <nav id="conteudo-principal" class="nav-principal" aria-label="seções do trabalho">
+        <div class="aria1" role="region" aria-labelledby="card1-label">
+            <div class="aria1-content">
+                <ul>
+                    <li id="card1-label">O que é ARIA?</li>
+                    <li>Quando Foi Criado?</li>
+                    <li>Como Funciona?</li>
+                    <li>Qual o Propósito?</li>
+                </ul> 
+            </div>
+        
+            <div class="btn-acessar">
+                 <a href="/Navegação/ariapage1.html" class="acessar" aria-label="Acessar: O que é ARIA"> Acessar</a>
+            </div>
+        </div>
+        <div class="aria1" role="region" aria-labelledby="card2-label">
+            <div class="aria1-content">
+                <ul>
+                    <li id="card2-label">Quais são os principais atributos ARIA e como aplicá-los corretamente?</li>
+                    <li>Quais erros comuns os desenvolvedores cometem ao usar ARIA?</li>
+                    <li>Exemplos práticos?</li>
+                    <li>Como ARIA se integra com HTML5 e CSS?</li>
+                </ul>
+            </div>
+            
+            <div class="btn-acessar">
+                <a href="/Navegação/ariapage2.html" class="acessar" aria-label="Acessar: Atributos e erros comuns"> Acessar</a>
+            </div>
+        </div>
+        <div class="aria1" role="region" aria-labelledby="card3-label">
+            <div class="aria1-content">
+                <ul>
+                    <li id="card3-label">Qual é o impacto do ARIA na experiência de usuários com deficiência visual?</li>
+                    <li>Quais legislações e normas internacionais exigem acessibilidade digital?</li>
+                    <li>Situação da acessibilidade no mundo</li>
+                    <li>Conclusão</li>
+                    <li>Referências Bibliográficas</li>
+                </ul>     
+            </div>
+            <div class="btn-acessar">
+                <a href="/Navegação/ariapage3.html" class="acessar" aria-label="Acessar: Impacto e legislação"> Acessar</a>
+            </div>
+        </div>
+    </nav>
+    <footer>
+        <div class="participantes">
+            <p>Ytallo Brito de Oliveira</p>
+            <p>Raphael Pinheiro Duca Silva</p>
+            <p>Nycolas Pereira Martins</p>
+        </div>
+        <div class="infos">
+            <p>Etec Jd. Ângela 2026</p>
+        </div>
+    </footer>
+
+    <script src="principal.js"></script>
+</body>
+</html>
