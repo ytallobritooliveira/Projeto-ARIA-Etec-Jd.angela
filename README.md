@@ -1,4 +1,3 @@
-# site-aria-acessibilidade
 # 🌐 Projeto ARIA - Acessibilidade Web
 
 Site desenvolvido com foco em acessibilidade utilizando ARIA.
