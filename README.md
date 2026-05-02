@@ -19,3 +19,7 @@ Site desenvolvido com foco em acessibilidade utilizando ARIA.
 ## 🎨 Protótipo
 [LINK_DO_FIGMA](https://www.figma.com/proto/hp9pGzfAn6II5sTVWbSsCy/Aria?node-id=0-1&t=l1iPxbEzji3TUXpW-1)
 
+## 👥 Integrantes
+- Ytallo Brito de Oliveira
+- Nycollas Pereira Martins
+- Raphael Pinheiro Duca Silva
