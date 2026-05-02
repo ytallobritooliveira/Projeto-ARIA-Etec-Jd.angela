@@ -1,2 +1,19 @@
 # site-aria-acessibilidade
-Eu e meus colegas do curso técnico de Desenvolvimento de Sistemas fomos desafiados, a fazer um site sobre oque é ARIA e acessibilidade web. E aqui esta o nosso projeto
+# 🌐 Projeto ARIA - Acessibilidade Web
+
+Site desenvolvido com foco em acessibilidade utilizando ARIA.
+
+## 🚀 Tecnologias
+- HTML
+- CSS
+- ARIA
+
+## 📱 Funcionalidades
+- Site responsivo
+- Boas práticas de acessibilidade
+
+## 🔗 Acesse o site
+LINK_DO_GITHUB_PAGES
+
+## 🎨 Protótipo
+LINK_DO_FIGMA
