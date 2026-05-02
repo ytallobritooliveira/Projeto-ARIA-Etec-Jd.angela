@@ -5,7 +5,9 @@ Site desenvolvido com foco em acessibilidade utilizando ARIA.
 ## 🚀 Tecnologias
 - HTML
 - CSS
+- JS
 - ARIA
+  
 
 ## 📱 Funcionalidades
 - Site responsivo
